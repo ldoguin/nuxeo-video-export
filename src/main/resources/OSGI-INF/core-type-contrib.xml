@@ -1,0 +1,15 @@
+<component name="org.nuxeo.video.converter.schemas">
+
+<extension point="schema" target="org.nuxeo.ecm.core.schema.TypeService">
+    <schema name="videoProfile" src="schemas/video_profile.xsd"/>
+    <schema name="videoTarget" src="schemas/video_target.xsd"/>
+    <schema name="videoExport" src="schemas/video_export.xsd" prefix="vex"/>
+  </extension>
+  
+  <extension point="doctype" target="org.nuxeo.ecm.core.schema.TypeService">
+    <facet name="VideoExport">
+      <schema name="videoExport"/>
+    </facet>
+  </extension>
+  
+</component>

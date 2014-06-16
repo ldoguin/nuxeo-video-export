@@ -1,0 +1,4 @@
+id, label, height, fps, obsolete
+"hd1080p60fps","HD 1080P 60 fps","1080","60","0"
+"hd1080p30fps","HD 1080P 30 fps","1080","30","0"
+"svcdPal","SVCD PAL","576","25","0"

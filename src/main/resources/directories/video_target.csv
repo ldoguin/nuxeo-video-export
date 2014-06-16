@@ -1,0 +1,4 @@
+id, label, acodec, vcodec, extension, mimetype, obsolete
+"webm","WebM (vpx)","libvorbis","libvpx","webm","video/webm","0"
+"oggF","OGG (theora/flac)","libflac","libtheora","ogv","video/theora","0"
+"oggV","OGG (theora/vorbis)","libvorbis","libtheora","ogv","video/theora","0"

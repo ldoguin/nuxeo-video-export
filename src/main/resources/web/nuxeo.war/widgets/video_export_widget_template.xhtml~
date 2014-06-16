@@ -1,0 +1,42 @@
+<div xmlns:nxu="http://nuxeo.org/nxweb/util"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:a4j="http://richfaces.org/a4j"
+     xmlns:c="http://java.sun.com/jstl/core"
+     xmlns:nxh="http://nuxeo.org/nxweb/html"
+     xmlns:nxl="http://nuxeo.org/nxforms/layout"
+     xmlns:nxd="http://nuxeo.org/nxweb/document"
+     class="content_block">
+
+  <c:if test="#{fieldOrValue.hasFacet('VideoExport')}">
+
+  <c:if test="#{!empty widget.label and widget.handlingLabels}">
+    <ui:include src="/widgets/incl/widget_label_template.xhtml">
+      <ui:param name="labelStyleClass" value="summaryTitle" />
+    </ui:include>
+  </c:if>
+
+  <table width="100%" cellspacing="0">
+    <tbody>
+      <c:forEach var="exportedVideo" items="#{videoExportActions.getExportedVideos(fieldOrValue)}"
+        varStatus="status">
+        <tr class="videoConversionRow">
+          <td class="fieldColumn">
+            #{exportedVideo.name}
+          </td>
+          <td class="actionsColumn">
+           <h:outputLink value="#{videoExportActions.getTranscodedVideoURL(fieldOrValue, exportedVideo)}">
+            <h:graphicImage url="/icons/download.png" />
+           </h:outputLink>
+           <h:commandButton value="remove"
+             action="#{videoExportActions.removeExport(fieldOrValue, exportedVideo)}" class="button smallButton" />
+          </td>
+        </tr>
+      </c:forEach>
+    </tbody>
+  </table>
+
+  </c:if>
+
+</div>

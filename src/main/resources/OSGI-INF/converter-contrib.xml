@@ -1,0 +1,28 @@
+<component name="org.nuxeo.video.converter.genericconverter">
+
+	<extension
+		target="org.nuxeo.ecm.platform.commandline.executor.service.CommandLineExecutorComponent"
+		point="command">
+
+		<command name="ffmpeg-generic-video" enabled="true">
+			<commandLine>ffmpeg</commandLine>
+			<parameterString> -i #{inFilePath} -s #{width}x#{height} -acodec #{acodec} -vcodec #{vcodec} #{outFilePath}</parameterString>
+			<installationDirective>You need to install ffmpeg from
+				http://ffmpeg.org (apt-get install ffmpeg)
+			</installationDirective>
+		</command>
+
+	</extension>
+
+	<extension point="converter"
+		target="org.nuxeo.ecm.core.convert.service.ConversionServiceImpl">
+
+		<converter class="org.nuxeo.video.GenericVideoConverter"
+			name="genericVideoConverter">
+			<parameters>
+				<parameter name="CommandLineName">ffmpeg-generic-video</parameter>
+			</parameters>
+		</converter>
+	</extension>
+
+</component>

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-Vendor: Nuxeo
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 1.0.qualifier
+Bundle-Name: nuxeo-video-export
+Nuxeo-Component: OSGI-INF/extensions/org.nuxeo.video.ExportVideo.xml,O
+ SGI-INF/converter-contrib.xml,OSGI-INF/directory-contrib.xml,OSGI-INF
+ /core-type-contrib.xml
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: nuxeo-video-export
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+

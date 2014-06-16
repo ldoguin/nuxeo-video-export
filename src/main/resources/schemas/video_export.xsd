@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://www.nuxeo.org/ecm/schemas/videoExport/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:video="http://www.nuxeo.org/ecm/schemas/video">
+
+  <xs:import namespace = "http://www.nuxeo.org/ecm/schemas/video" schemaLocation = "video.xsd"/>
+  <xs:element name="exportedVideos" type="video:transcodedVideoItems" />
+
+</xs:schema>
